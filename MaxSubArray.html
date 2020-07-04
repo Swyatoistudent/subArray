@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {background: url();}
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="1320" height="600"></canvas>
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    /**
+     * @param {number[]} nums
+     * @return {number}
+     */
+    var maxSubArray = function(nums) {
+        if(nums.length==1){
+            return nums[0];
+        }
+        let sum=nums[0];
+        let max =sum;
+
+        for(let i = 1;i<nums.length ;i++) {
+
+            if(((sum===(nums[i-1]+nums[i])&&nums[i]<0)||sum<0)){
+                sum=0;
+            }
+            sum=sum+nums[i];
+        }
+    };
+
+
+</script>
+
+</body>
+</html>
